@@ -89,6 +89,7 @@ include_directories("${PROJECT_INCLUDE_DIR}")
 add_executable ( ${PROJECT_NAME} ${PROJECT_SRCS} )
 
 target_link_libraries ( ${PROJECT_NAME} ProgramApi )
+
 target_link_libraries ( ${PROJECT_NAME} ScreepsApi )
 target_link_libraries ( ${PROJECT_NAME} ScreepsApiV12 )
 

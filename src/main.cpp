@@ -226,10 +226,10 @@ nlohmann::json gServerOptions = {
         } }
     };
 
-class ServerOptions : public ArgumentParser
+class ServerOptions : public ProgramApi::ArgumentParser
 {
 public:
-    ServerOptions () : ArgumentParser (gServerOptions)
+    ServerOptions () : ProgramApi::ArgumentParser (gServerOptions)
     {
     }
 };
@@ -246,7 +246,7 @@ int main ( int argc, char** argv )
 {
     int index = 1;
     ServerOptions server;
-    ArgumentParser::Arguments serverOptions = server.parseArgs ( index, argc, argv );
+    ProgramApi::ArgumentParser::Arguments serverOptions = server.parseArgs ( index, argc, argv );
 
     std::shared_ptr < ScreepsApi::Web::Client > web (
         new WebClient ( serverOptions["serverIP"].get<std::string>()+":"+serverOptions["serverPort"].get<std::string>() )
