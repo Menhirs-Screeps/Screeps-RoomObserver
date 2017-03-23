@@ -42,6 +42,12 @@ find_package ( ScreepsApi REQUIRED
 )
 include_directories(${ScreepsApi_INCLUDE_DIRS})
 
+find_package ( ProgramApi REQUIRED
+        NO_CMAKE_PACKAGE_REGISTRY
+        NO_CMAKE_SYSTEM_PACKAGE_REGISTRY
+)
+include_directories(${ProgramApi_INCLUDE_DIRS})
+
 find_package ( ScreepsApiV12 REQUIRED
         NO_CMAKE_PACKAGE_REGISTRY
         NO_CMAKE_SYSTEM_PACKAGE_REGISTRY
@@ -82,6 +88,7 @@ include_directories("${PROJECT_INCLUDE_DIR}")
 
 add_executable ( ${PROJECT_NAME} ${PROJECT_SRCS} )
 
+target_link_libraries ( ${PROJECT_NAME} ProgramApi )
 target_link_libraries ( ${PROJECT_NAME} ScreepsApi )
 target_link_libraries ( ${PROJECT_NAME} ScreepsApiV12 )
 
