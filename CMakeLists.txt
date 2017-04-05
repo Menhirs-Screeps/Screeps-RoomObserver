@@ -93,6 +93,7 @@ target_link_libraries ( ${PROJECT_NAME} ProgramApi )
 target_link_libraries ( ${PROJECT_NAME} ScreepsApi )
 target_link_libraries ( ${PROJECT_NAME} ScreepsApiV12 )
 
+target_link_libraries ( ${PROJECT_NAME} ncurses )
 target_link_libraries ( ${PROJECT_NAME} ${Boost_LIBRARIES} )
 target_link_libraries ( ${PROJECT_NAME} ${OPENSSL_CRYPTO_LIBRARY} )
 target_link_libraries ( ${PROJECT_NAME} ${OPENSSL_LIBRARIES})
